@@ -4,7 +4,7 @@
   "description": "- O projeto deve ser desenvolvido em Elixir, Ruby ou Node.js\r - Você pode usar quaisquer bibliotecas de terceiros ou frameworks\r - Seu projeto deve rodar com docker",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./tests/index.test.js | tap-spec"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,8 @@
   "homepage": "https://github.com/altec-sistemas/pay-test-api#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
   }
 }
