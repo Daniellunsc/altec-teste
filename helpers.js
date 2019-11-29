@@ -10,6 +10,22 @@ const retrieveCitiesArray = () => {
     }
 }
 
+const retrieveCitiesWithWeather = () => {
+    if(Array.isArray(cityJsonList) && Array.isArray(weatherJsonList)) {
+        let cityIncludedWeatherKey = cityJsonList.map(city => {
+            const cityWeather = weatherJsonList.find(weather => weather.cityId === city.id)
+            return {
+                ...city,
+                weather: cityWeather ? cityWeather.data : []
+            }
+        })
+        return cityIncludedWeatherKey
+    } 
+    return []
+}
+
+
 module.exports = {
     retrieveCitiesArray,
+    retrieveCitiesWithWeather
 }
