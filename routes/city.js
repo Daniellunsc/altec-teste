@@ -12,7 +12,7 @@ router.get('/cities/weather', (req, res) => {
     return res.json(retrieveCitiesWithWeatherAvailable())
 })
 
-router.get('/cities/:id/weather', (req, res) => {
+router.get('/cities/:id/', (req, res) => {
     const cityId = req.params.id;
     const dateStart = req.query.dateStart;
     const dateEnd = req.query.dateEnd;
