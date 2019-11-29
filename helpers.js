@@ -30,11 +30,21 @@ const retrieveCitiesWithWeatherAvailable = () => {
         return citiesWithWeather.filter(city => city.weather.length > 0)
     }
     return []
+},
+
+const retrieveCityById = (cityId) => {
+    const citiesWithWeather = retrieveCitiesWithWeather();
+    if(Array.isArray(citiesWithWeather)) {
+        const cityFound = citiesWithWeather.find(city => String(city.id) === String(cityId))
+        return cityFound ? cityFound : {message: 'notfound'}
+    } 
+    return {message: 'notfound'}
 }
 
 
 module.exports = {
     retrieveCitiesArray,
     retrieveCitiesWithWeather,
-    retrieveCitiesWithWeatherAvailable
+    retrieveCitiesWithWeatherAvailable,
+    retrieveCityById
 }
