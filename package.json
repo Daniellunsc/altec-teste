@@ -1,0 +1,23 @@
+{
+  "name": "pay-test-api",
+  "version": "1.0.0",
+  "description": "- O projeto deve ser desenvolvido em Elixir, Ruby ou Node.js\r - Você pode usar quaisquer bibliotecas de terceiros ou frameworks\r - Seu projeto deve rodar com docker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altec-sistemas/pay-test-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/altec-sistemas/pay-test-api/issues"
+  },
+  "homepage": "https://github.com/altec-sistemas/pay-test-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.24.0"
+  }
+}
