@@ -30,7 +30,7 @@ const retrieveCitiesWithWeatherAvailable = () => {
         return citiesWithWeather.filter(city => city.weather.length > 0)
     }
     return []
-},
+}
 
 const retrieveCityById = (cityId) => {
     const citiesWithWeather = retrieveCitiesWithWeather();
@@ -41,10 +41,25 @@ const retrieveCityById = (cityId) => {
     return {message: 'notfound'}
 }
 
+const filterWeatherDataByTime = (startDate, endDate, cityObject) => {
+    if(startDate && !endDate) {
+        let unixStartDate = moment(startDate, "YYYY-MM-DD").unix();
+        let weatherArray = cityObject.weather.filter(weather => weather.dt >= unixStartDate)
+        return {...cityObject, weather: weatherArray}
+    } else if(startDate && endDate) {
+        let unixStartDate = moment(startDate, "YYYY-MM-DD").unix();
+        let unixEndDate = moment(endDate, "YYYY-MM-DD").unix();
+        let weatherArray = cityObject.weather.filter(weather => weather.dt >= unixStartDate && weather.dt <= unixEndDate)
+        return {...cityObject, weather: weatherArray}
+    } else {
+        return cityObject;
+    }
+}
 
 module.exports = {
     retrieveCitiesArray,
     retrieveCitiesWithWeather,
     retrieveCitiesWithWeatherAvailable,
-    retrieveCityById
+    retrieveCityById,
+    filterWeatherDataByTime
 }
