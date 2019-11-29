@@ -24,8 +24,17 @@ const retrieveCitiesWithWeather = () => {
     return []
 }
 
+const retrieveCitiesWithWeatherAvailable = () => {
+    let citiesWithWeather = retrieveCitiesWithWeather();
+    if(Array.isArray(citiesWithWeather)) {
+        return citiesWithWeather.filter(city => city.weather.length > 0)
+    }
+    return []
+}
+
 
 module.exports = {
     retrieveCitiesArray,
-    retrieveCitiesWithWeather
+    retrieveCitiesWithWeather,
+    retrieveCitiesWithWeatherAvailable
 }
