@@ -1,3 +1,8 @@
+# CONFIGURAÇÃO DO PROJETO
+- Para executar o projeto, execute o seguinte comando: `$ docker build -t altec_daniel .`
+- Depois do build da imagem, é exposta a porta 8080 da aplicação.
+- Para executar, basta rodar o seguinte comando: `$ docker run -p 8080:8080 altec_daniel`
+
 # REGRAS GERAIS
 - O projeto deve ser desenvolvido em Elixir, Ruby ou Node.js
 - Você pode usar quaisquer bibliotecas de terceiros ou frameworks
